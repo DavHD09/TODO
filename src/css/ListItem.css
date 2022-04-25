@@ -1,0 +1,21 @@
+.item{
+    background: #07c4ff;
+    margin: 10px;
+    list-style: none;
+    border-radius: 10px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container_complete{
+    padding-left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.container_delete{
+    color: rgba(235, 5, 5, 0.963);
+    font-size: 20px;
+    padding: 0px 10px 55px;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.container_list{
+    margin-top: 0px;
+    overflow-y: scroll;
+    height: 465px;
+}
+.container_list::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.container_list::-webkit-scrollbar:vertical {
+    width:10px;
+}
+.container_list::-webkit-scrollbar-button:increment,.container_list::-webkit-scrollbar-button {
+    display: none;
+} 
+.container_list::-webkit-scrollbar-thumb {
+    background-color: #0e3f63;
+    border-radius: 20px;
+    border: 1px solid #f1f2f3;
+}
+.container_list::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
