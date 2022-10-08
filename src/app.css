@@ -1,9 +1,23 @@
-.container_main{
-    width: 600px;
-    height: 850px;
-    border: 2px dashed #413160;
+.container_main {
+  width: 600px;
+  height: 850px;
+  border: 2px dashed #413160;
+  margin: auto;
+  border-radius: 20px;
+  background: #097bb4;
+  margin-top: 60px;
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    margin: 5px;
+  }
+  .container_main {
+    width: 99%;
+    height: 98.5vh;
+    border: 2px solid #413160;
     margin: auto;
     border-radius: 20px;
     background: #097bb4;
-    margin-top: 60px;
+  }
 }

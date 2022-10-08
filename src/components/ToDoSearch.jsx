@@ -4,7 +4,6 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "../css/Search.css";
 
 export const ToDoSearch = ({ setSearchValue }) => {
-  
   const onChangeSearch = (e) => {
     setSearchValue(e.target.value);
   };

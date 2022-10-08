@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-export const CreateToDoButton = () => {
+export const CreateToDoButton = ({setOpenModal}) => {
 
   const buttonAdd = {
     display: 'flex',
@@ -12,12 +12,17 @@ export const CreateToDoButton = () => {
     borderRadius: '10px',
     width: '230px',
     margin: 'auto',
-    marginTop: '30px',
-    justifyContent: 'center'
+    marginTop: "20px",
+    justifyContent: 'center',
+    cursor: 'pointer'
+  }
+
+  const handleAddTodo = () => {
+    setOpenModal(true)
   }
 
   return (
-    <button style={buttonAdd} >
+    <button style={buttonAdd} onClick={handleAddTodo}>
       <p style={{fontSize: '15px'}}>Añadir una nueva tarea</p>
       <FontAwesomeIcon icon={faPlus} style={{fontSize: '20px', marginLeft: '5px'}} />
     </button>

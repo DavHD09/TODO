@@ -5,24 +5,18 @@ import { ToDoList } from "./components/ToDoList";
 import { ToDoItem } from "./components/ToDoItem";
 import { CreateToDoButton } from "./components/CreateToDoButton";
 import { useLocalStorage } from "./Hooks/useLocalStorage";
+import { ModalAddTodo } from "./components/ModalAddTodo";
 import "./app.css";
 
-// const default_tasks = [
-//   { id: "0", text: "Trabajar en supre", completed: true },
-//   { id: "1", text: "Tomar curso de intro a React.js", completed: true },
-//   { id: "2", text: "Investigar sobre linux", completed: false },
-//   { id: "3", text: "Sacar cita Icetex", completed: false },
-//   { id: "4", text: "Pagar cuotas Icetex", completed: false },
-//   { id: "5", text: "Jugar GTA V", completed: false },
-//   { id: "6", text: "ver curso de codestream", completed: false },
-// ];
-
 function App() {
-  const {tasks, savetodos, loading, error} = useLocalStorage('TODOS_V1', [])
-  const [searchValue, setSearchValue] = useState("");  
+  const { tasks, savetodos, loading, error } = useLocalStorage("TODOS_V2", []);
+  const [searchValue, setSearchValue] = useState("");
+  const [openModal, setOpenModal] = useState(false);
   let searchedTask = [];
 
-  const numbercompleted = tasks.filter((task) => task.completed === true).length;
+  const numbercompleted = tasks.filter(
+    (task) => task.completed === true
+  ).length;
   const allregister = tasks.length;
 
   if (searchValue.length === 0) {
@@ -59,13 +53,12 @@ function App() {
   return (
     <div className="container_main">
       <div style={{ width: "85%", margin: "auto" }}>
-        
         <ToDoCounter
           numbercompleted={numbercompleted}
           allregister={allregister}
         />
         <ToDoSearch setSearchValue={setSearchValue} />
-        <ToDoList>
+        <ToDoList searchedTask={searchedTask}>
           {searchedTask.map((task) => (
             <ToDoItem
               key={task.id}
@@ -79,8 +72,16 @@ function App() {
         </ToDoList>
         {error && <p> Desesperate, hubo un error...</p>}
         {loading && <p> Estamos cargando...</p>}
-        {(!loading && !allregister) && <p> Crea tu primer ToDo</p> }
-        <CreateToDoButton />
+        {!loading && !allregister && <p> Crea tu primer ToDo</p>}
+        <CreateToDoButton setOpenModal={setOpenModal} />
+        {openModal && (
+          <ModalAddTodo
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+            savetodos={savetodos}
+            tasks={tasks}
+          />
+        )}
       </div>
     </div>
   );
