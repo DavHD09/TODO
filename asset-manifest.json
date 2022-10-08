@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/DavHD09/TODO/static/css/main.8f52d8a3.css",
+    "main.js": "/DavHD09/TODO/static/js/main.6a8a9ae9.js",
+    "index.html": "/DavHD09/TODO/index.html",
+    "main.8f52d8a3.css.map": "/DavHD09/TODO/static/css/main.8f52d8a3.css.map",
+    "main.6a8a9ae9.js.map": "/DavHD09/TODO/static/js/main.6a8a9ae9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f52d8a3.css",
+    "static/js/main.6a8a9ae9.js"
+  ]
+}
