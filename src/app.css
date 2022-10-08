@@ -1,7 +1,7 @@
 .container_main {
   width: 600px;
   height: 850px;
-  border: 2px dashed #413160;
+  border: 2px solid #413160;
   margin: auto;
   border-radius: 20px;
   background: #097bb4;
